@@ -15,9 +15,9 @@ resource "aws_s3_bucket" "bucket2" {
 }
 # creating a VPC
 resource "aws_vpc" "vpc1" {
-    cidr_block = "10.0.0.0/16"
+    cidr_block = var.vpc-cidr
     tags = {
-      Name = "somevpc"
+      Name = var.vpc-name
     }
 }
 
@@ -33,8 +33,8 @@ resource "aws_subnet" "subnet1" {
 }
 
 resource "aws_instance" "ec2-vm1" {
-    ami           = "ami-055a9df0c8c9f681c"
-    instance_type = "t2.micro"
+    ami           = var.vm-ami
+    instance_type = var.vm-type
     subnet_id = "subnet-01aac3d16b5e7d1ad"
     tags = {
       Name = "first-vm"
