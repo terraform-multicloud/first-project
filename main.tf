@@ -13,11 +13,22 @@ resource "aws_s3_bucket" "bucket2" {
   depends_on = [ aws_vpc.vpc1 ]
 
 }
-
+# creating a VPC
 resource "aws_vpc" "vpc1" {
     cidr_block = "10.0.0.0/16"
     tags = {
       Name = "somevpc"
+    }
+}
+
+
+# creating a subnet
+resource "aws_subnet" "subnet1" {
+    vpc_id     = aws_vpc.vpc1.id
+    cidr_block = "10.0.1.0/24"
+    tags = {
+        Name = "${aws_vpc.vpc1.tags["Name"]}-subnet1"
+
     }
 }
 
