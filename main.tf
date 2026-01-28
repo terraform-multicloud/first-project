@@ -17,7 +17,7 @@ resource "aws_s3_bucket" "bucket2" {
 resource "aws_vpc" "vpc1" {
     cidr_block = var.vpc-cidr
     tags = {
-      Name = var.vpc-name
+      Name = var.vpcname
     }
 }
 

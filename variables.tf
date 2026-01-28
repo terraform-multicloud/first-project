@@ -1,6 +1,6 @@
-variable "vpc-name" {
+variable "vpcname" {
     type        = string
-    # default = "myvpc"
+    # default = "fromdefault-vpc"
   
 }
 # if type is not defined, by default it is string
