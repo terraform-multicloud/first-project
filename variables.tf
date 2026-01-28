@@ -1,6 +1,6 @@
 variable "vpc-name" {
     type        = string
-    default = "myvpc"
+    # default = "myvpc"
   
 }
 # if type is not defined, by default it is string
@@ -11,11 +11,9 @@ variable "vpc-cidr" {
 
 
 variable "vm-ami" {
-    default = "ami-055a9df0c8c9f681c"
   
 }
 variable "vm-type" {
-    default = "t2.medium"
   
 }
 variable "bool1" {
